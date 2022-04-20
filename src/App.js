@@ -1,24 +1,21 @@
-import styled from "styled-components";
-import React from "react";
+import styled from "styled-components"
 const Button = styled.button`
-  padding: 10px;
-  background-color: red;
-  color: white;
-`;
-const Button1 = styled.button`
-  background-color: blue;
-  padding: 10px;
-  margin-left: 20px;
-  color: white;
-`;
-function App() {
-  return (
-    <>
-      <Button>click</Button>
-      <Button1>click me</Button1>
-    
-    </>
-  );
-}
+  /* Adapt the colors based on primary prop */
+  background: ${props => props.gaurav ? "red" : "white"};
+  color: ${props => props.gaurav ? "white" : "red"};
 
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+`;
+const App=()=>{
+return(
+  <div>
+    <Button>Normal btn</Button>
+    <Button gaurav>Props btn</Button>
+  </div>
+);
+}
 export default App;
